@@ -70,19 +70,19 @@ class SimpleMonitor(simple_switch_13.SimpleSwitch13):
                              stat.instructions[0].actions[0].port,
                              stat.packet_count, stat.byte_count)
 
-        outputfile = 'data.txt'  # Student Modification begins here
+            outputfile = 'data.txt'  # Student Modification begins here
 
-        if os.path.isfile(outputfile):          # Deletes file if too large
-            if os.path.getsize(outputfile) > 1000 * 1024:
-                    os.remove(outputfile)
-        with open('data.txt', 'a') as outfile:  #  Writes data to file
-            i+=1
-            j=str(i)
-            outfile.write('\ndpid:')
-            json.dump(ev.msg.datapath.id, outfile,ensure_ascii=True,indent=3,sort_keys=True)
-            outfile.write(' port:'+j+' packetcount:')
-            json.dump(stat.packet_count, outfile,ensure_ascii=True,indent=3,sort_keys=True)
-            outfile.write('\n')
+            if os.path.isfile(outputfile):          # Deletes file if too large
+                if os.path.getsize(outputfile) > 1000 * 1024:
+                        os.remove(outputfile)
+            with open('data.txt', 'a') as outfile:  #  Writes data to file
+                i+=1
+                j=str(i)
+                outfile.write('\ndpid:')
+                json.dump(ev.msg.datapath.id, outfile,ensure_ascii=True,indent=3,sort_keys=True)
+                outfile.write(' port:'+j+' packetcount:')
+                json.dump(stat.packet_count, outfile,ensure_ascii=True,indent=3,sort_keys=True)
+                outfile.write('\n')
 
     @set_ev_cls(ofp_event.EventOFPPortStatsReply, MAIN_DISPATCHER)
     def _port_stats_reply_handler(self, ev):
