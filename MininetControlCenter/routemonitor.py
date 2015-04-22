@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#__author__ = "Joshua K Jacobs, 2015"
+#__email__ = "joshuajac.2011@my.bristol.ac.uk"
 from Tkinter import *
 import subprocess
 import time
