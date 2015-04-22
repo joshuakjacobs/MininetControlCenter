@@ -185,7 +185,7 @@ class App:
 
         """
         print "Prototype Routing willl open in a new window."
-        subprocess.Popen('xterm -e sudo ~/routemonitor.py', shell=True)
+        subprocess.Popen('xterm -e sudo ~/MininetControlCenter/routemonitor.py', shell=True)
 
     def dataprint(self):
         """
