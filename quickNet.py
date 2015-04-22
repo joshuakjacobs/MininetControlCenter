@@ -78,7 +78,7 @@ def quickNet(switchnum,hostnum,links):
         nodeB= hostdict.get(l[1]) or hostdict.get(l[0]) or switchdict.get(l[1]) or switchdict.get(l[0])
 
         try:
-                net.addLink(nodeA, nodeB)
+            net.addLink(nodeA, nodeB)
         except:
             print 'An error has occured connecting nodes,cleaning up and exiting'
             subprocess.call('sudo mn -c', shell=True)
