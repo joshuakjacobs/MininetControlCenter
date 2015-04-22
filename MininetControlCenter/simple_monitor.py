@@ -82,7 +82,7 @@ class SimpleMonitor(simple_switch_13.SimpleSwitch13):
             json.dump(ev.msg.datapath.id, outfile,ensure_ascii=True,indent=3,sort_keys=True)
             outfile.write(' port:'+j+' packetcount:')
             json.dump(stat.packet_count, outfile,ensure_ascii=True,indent=3,sort_keys=True)
-            outfile.write('\n'
+            outfile.write('\n')
 
     @set_ev_cls(ofp_event.EventOFPPortStatsReply, MAIN_DISPATCHER)
     def _port_stats_reply_handler(self, ev):

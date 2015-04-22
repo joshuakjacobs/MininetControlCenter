@@ -175,21 +175,21 @@ class Routeframe:
                     string='sudo ovs-ofctl -O OpenFlow13 del-flows {} --strict in_port={},priority={}'.format(self.s2,self.p2,self.i)
                     string2='sudo ovs-ofctl -O OpenFlow13 add-flow {} in_port={},priority=1,actions=output:{}'.format(self.s1,self.p1,self.d1)
                     subprocess.Popen(string,shell=True)
-            subprocess.Popen(string2,shell=True)
-            print self.i
+                    subprocess.Popen(string2,shell=True)
+                    print self.i
                     print "Reverting to Primary Rules"
                     counter = 0
 
             self.oldcalc=self.calc
 
-        def end_route(self):
-            """Is called when the Stop Monitor button is clicked. Ends the monitoring thread independently, and
-            reconfigures button to start the thread again
+    def end_route(self):
+        """Is called when the Stop Monitor button is clicked. Ends the monitoring thread independently, and
+        reconfigures button to start the thread again
 
-            """
-            print "Stopping monitor"
-            self.stop_threads.set()
-            self.addbtn2.configure(text="Monitor", command=self.routethread.start)
+        """
+        print "Stopping monitor"
+        self.stop_threads.set()
+        self.addbtn2.configure(text="Monitor", command=self.routethread.start)
 
 
 def handler():
