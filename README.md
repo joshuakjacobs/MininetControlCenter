@@ -28,6 +28,7 @@ An alternative method is cloning the folder directly from the online repository 
     •	git clone https://github.com/joshuakjacobs/MininetControlCenter.git
 
 Both these methods achieve the same aim. The installation procedure only requires the bash script “cleaner.sh” to be run, using the command below:
+    
     •	sudo ./cleaner.sh
 
 The script makes small modification to the Ryu GUI topology module to enable the Mininet Control Center to use it. The rest of the files are Python scripts, so they do not require installation.
